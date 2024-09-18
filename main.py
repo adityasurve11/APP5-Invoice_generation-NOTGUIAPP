@@ -1,3 +1,4 @@
+# This app does not have any GUI(Graphical user interface)
 import pandas as pd
 import glob
 from fpdf import FPDF
