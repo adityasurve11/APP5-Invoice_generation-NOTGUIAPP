@@ -24,7 +24,7 @@ for filepath in filepaths:
 
     df = pd.read_excel(filepath, sheet_name="Sheet 1")
 
-    #Add a header
+    # Add a header
 
     columns = df.columns
     columns = [item.replace("_", "").title() for item in columns]
@@ -36,7 +36,7 @@ for filepath in filepaths:
     pdf.cell(w=30, h=8, txt=columns[3], border=1)
     pdf.cell(w=30, h=8, txt=columns[4], border=1, ln=1)
 
-    #Add rows to the table
+    # Add rows to the table
     for index, row in df.iterrows():
         pdf.set_font(family='Times', size=11)
         pdf.set_text_color(80, 80, 80)
@@ -57,11 +57,11 @@ for filepath in filepaths:
     pdf.cell(w=30, h=8, txt=str(total_sum), border=1, ln=1)
 
     # Add total sum sentence
-    pdf.set_font(family='Times', size=11)
+    pdf.set_font(family='Times', size=11, style="B")
     pdf.cell(w=30, h=8, txt=f"The total price is {total_sum}", ln=1)
 
     # Add company name and logo
-    pdf.set_font(family='Times', size=11)
+    pdf.set_font(family='Times', size=16, style="B")
     pdf.cell(w=30, h=8, txt=f"PythonHow", ln=1)
     pdf.image("pythonhow.png", w=10)
 
