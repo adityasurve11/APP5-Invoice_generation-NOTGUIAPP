@@ -20,17 +20,17 @@ for filepath in filepaths:
     pdf.cell(w=50, h=8, txt=f"Invoice nr.{invoice_nr}", ln=1)
 
     pdf.set_font(family="Times", size=18, style="B")
-    pdf.cell(w=50, h=8, txt=f"Date: {date}")
+    pdf.cell(w=50, h=8, txt=f"Date: {date}", ln=1)
 
     df = pd.read_excel(filepath, sheet_name="Sheet 1")
     for index, row in df.iterrows():
         pdf.set_font(family='Times', size=11)
         pdf.set_text_color(80, 80, 80)
-        pdf.cell(w=30, h=8, txt=str(row["product_id"]))
-        pdf.cell(w=70, h=8, txt=str(row["product_name"]))
-        pdf.cell(w=30, h=8, txt=str(row["amount_purchased"]))
-        pdf.cell(w=70, h=8, txt=str(row["price_per_unit"]))
-        pdf.cell(w=70, h=8, txt=str(row["total_price"]))
+        pdf.cell(w=30, h=8, txt=str(row["product_id"]), border=1)
+        pdf.cell(w=70, h=8, txt=str(row["product_name"]), border=1)
+        pdf.cell(w=30, h=8, txt=str(row["amount_purchased"]), border=1)
+        pdf.cell(w=70, h=8, txt=str(row["price_per_unit"]), border=1)
+        pdf.cell(w=70, h=8, txt=str(row["total_price"]), border=1)
 
 
 
