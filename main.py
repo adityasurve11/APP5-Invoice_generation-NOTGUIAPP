@@ -17,10 +17,10 @@ for filepath in filepaths:
     invoice_nr, date = filename.split("-")
 
     pdf.set_font(family="Times", size=18, style="B")
-    pdf.cell(w=50, h=8, txt=f"Invoice nr.{invoice_nr}")
+    pdf.cell(w=50, h=8, txt=f"Invoice nr.{invoice_nr}", ln=1)
 
     pdf.set_font(family="Times", size=18, style="B")
-    pdf.cell(w=50, h=8, txt=f"Date: {invoice_nr}")
+    pdf.cell(w=50, h=8, txt=f"Date: {date}")
 
 
     pdf.output(f"PDFs/{filename}.pdf")
